@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            padding: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-icon {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        /* Media Queries */
+        /* @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            nav ul li {
+                text-align: center;
+            }
+        } */
+
+        @media screen and (max-width: 480px) {
+            nav ul li {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            nav ul {
+                justify-content: space-evenly;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            nav ul {
+                justify-content: flex-end;
+            }
+
+            nav ul li {
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Your page content goes here -->
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
