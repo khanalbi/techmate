@@ -86,7 +86,7 @@
         // GitHub Sign-In
         function githubSignIn() {
             const clientId = 'Ov23li1VoABGgvdnaQ13';
-            const redirectUri = encodeURIComponent('http://localhost:8000/callback');
+            const redirectUri = encodeURIComponent('https://khanalbi.github.io/techmate/#/callback');
             const scope = 'user:email';
             const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
             window.location.href = githubAuthUrl;
